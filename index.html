@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Art Creator</title>
+
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 Pixel Art Creator</h1>
+
+    <div class="info">
+      Click and drag to draw! Choose your colors and grid size below.
+    </div>
+
+    <div class="controls">
+      <div class="color-picker-wrapper">
+        <span class="color-label">Color:</span>
+        <input type="color" id="pixelColor" class="color-picker" value="#f5576c" />
+      </div>
+
+      <select id="gridSize" onchange="createPixelGrid()">
+        <option value="12">12×12 Grid</option>
+        <option value="16" selected>16×16 Grid</option>
+        <option value="24">24×24 Grid</option>
+        <option value="32">32×32 Grid</option>
+        <option value="40">40×40 Grid</option>
+      </select>
+
+      <button class="btn" onclick="clearPixels()">🗑️ Clear</button>
+      <button class="btn btn-secondary" onclick="fillAll()">🎨 Fill All</button>
+    </div>
+
+    <div class="presets">
+      <div class="preset-color" style="background: #000000;" onclick="setColor('#000000')" title="Black"></div>
+      <div class="preset-color" style="background: #ffffff; border-color: #ddd;" onclick="setColor('#ffffff')" title="White"></div>
+      <div class="preset-color" style="background: #f5576c;" onclick="setColor('#f5576c')" title="Red"></div>
+      <div class="preset-color" style="background: #4ecdc4;" onclick="setColor('#4ecdc4')" title="Cyan"></div>
+      <div class="preset-color" style="background: #ffd93d;" onclick="setColor('#ffd93d')" title="Yellow"></div>
+      <div class="preset-color" style="background: #6bcf7f;" onclick="setColor('#6bcf7f')" title="Green"></div>
+      <div class="preset-color" style="background: #667eea;" onclick="setColor('#667eea')" title="Blue"></div>
+      <div class="preset-color" style="background: #f093fb;" onclick="setColor('#f093fb')" title="Pink"></div>
+      <div class="preset-color" style="background: #ff6b6b;" onclick="setColor('#ff6b6b')" title="Orange"></div>
+      <div class="preset-color" style="background: #a29bfe;" onclick="setColor('#a29bfe')" title="Purple"></div>
+    </div>
+
+    <div class="pixel-grid" id="pixelGrid"></div>
+
+    <div class="controls">
+      <button class="btn" onclick="randomFill()">🎲 Random Fill</button>
+      <button class="btn btn-secondary" onclick="downloadArt()">💾 Download</button>
+    </div>
+  </div>
+
+  <!-- Link JS -->
+  <script src="script.js"></script>
+</body>
+</html>
